@@ -7,7 +7,6 @@
     <div id="una capa">
       <h1>CAPITULO 4!</h1>
       <p>Finalmente, después de muchos días de viaje, Aurora llegó al bosque oscuro. El aire era frío y el silencio era abrumador. La oscuridad la rodeaba, pero ella no se detuvo. Con valentía, avanzó en busca de su destino.</p>
-<img src="C:\Users\golden\Documents\cuento\ING-SOFTWARE\DALL�E 2023-03-27 22.41.06 - ni�a perdida en un bosque oscuro.png">
     </div>
   </body>  
 </HTML>
