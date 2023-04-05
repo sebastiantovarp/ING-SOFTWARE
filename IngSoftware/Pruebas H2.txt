@@ -1,0 +1,7 @@
+      "tarea":"tarea3",
+      "completo":"false",
+      "prioridad": 1, 
+      "persona":{"id":2},
+        "fecha":"2022-12-14"
+
+"userName":"blabla2","password":"123"
