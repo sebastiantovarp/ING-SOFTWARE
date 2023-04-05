@@ -3,6 +3,7 @@ package com.usa.IngSoftware.entities;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.HashMap;
 
 @Entity
 public class Calendario {
@@ -16,7 +17,45 @@ public class Calendario {
     private Persona persona;
     private Date fecha;
     private int hora;
-    private String [][] tarea;
+    private HashMap<Integer, Tarea> MapaHoras;
+
+    //Metodo para crear un mapa de horas vacío para cada calendario.
+    public HashMap<Integer, Tarea> iniciarMapa() {
+        MapaHoras = new HashMap<>();
+        Tarea t;
+        // Inicializar el HashMap con 24 horas y valores vacíos por defecto
+        for (int i = 0; i < 24; i++) {
+            t = new Tarea(" ",0);
+            MapaHoras.put(i, t);
+        }
+        return MapaHoras;
+    }
+
+    public HashMap<Integer, Tarea> getHourlyMap() {
+        return this.MapaHoras;
+    }
+
+    public void setHourlyMap(HashMap<Integer, Tarea> MapaHoras) {
+        this.MapaHoras = MapaHoras;
+    }
+
+    // Método para agregar un valor a una hora específica del HashMap
+    public void addValue(int hour,Tarea tarea) {
+        Tarea t = tarea;
+        this.MapaHoras.put(hour, t);
+    }
+
+    // Método para obtener el valor de una hora específica del HashMap
+    public Tarea getValue(int hour) {
+        return this.MapaHoras.get(hour);
+    }
+
+    //Metodo para crear tareas: recibe toda la info y la hora necesaria.
+    public void crearTarea(String descripcion, int prioridad, int hora){
+        Tarea t= new Tarea(descripcion,prioridad);
+        MapaHoras.put(hora,t);
+    }
+
     public Calendario() {
 
     }
@@ -24,6 +63,7 @@ public class Calendario {
     public Calendario(Persona persona, Date fecha) {
         this.persona = persona;
         this.fecha = fecha;
+        this.MapaHoras= iniciarMapa();
     }
 
     public Long getId() {
@@ -58,11 +98,5 @@ public class Calendario {
         this.hora = hora;
     }
 
-    public String[][] getTarea() {
-        return tarea;
-    }
 
-    public void setTarea(String[][] tarea) {
-        this.tarea = tarea;
-    }
 }
