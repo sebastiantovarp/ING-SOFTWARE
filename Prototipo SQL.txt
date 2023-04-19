@@ -1,0 +1,36 @@
+CREATE TABLE Persona (
+
+id INT AUTO_INCREMENT PRIMARY KEY,
+
+userName VARCHAR(255),
+password VARCHAR(255)
+
+);
+
+
+ALTER TABLE Calendario ADD COLUMN persona_id INT;
+
+ALTER TABLE Calendario ADD CONSTRAINT fk_calendario_persona
+FOREIGN KEY (persona_id) REFERENCES Persona(id);
+
+
+CREATE TABLE calendario (
+  id BIGINT NOT NULL AUTO_INCREMENT,
+
+  persona_id BIGINT,
+  fecha DATE,
+
+  PRIMARY KEY (id),
+  FOREIGN KEY (persona_id) REFERENCES persona(id)
+	
+);
+
+
+CREATE TABLE Tarea (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  descripcion VARCHAR(255),
+  prioridad INT,
+  completado BOOLEAN,
+  calendario_id INT,
+  FOREIGN KEY (calendario_id) REFERENCES Calendario(id)
+);
