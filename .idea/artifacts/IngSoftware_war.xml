@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="IngSoftware:war">
+    <output-path>$PROJECT_DIR$/IngSoftware/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>IngSoftware</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="IngSoftware.war">
+      <element id="artifact" artifact-name="IngSoftware:war exploded" />
+    </root>
+  </artifact>
+</component>
