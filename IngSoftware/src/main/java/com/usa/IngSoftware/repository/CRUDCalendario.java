@@ -2,9 +2,9 @@ package com.usa.IngSoftware.repository;
 
 import com.usa.IngSoftware.entities.Calendario;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+import java.util.List;
+import java.util.Date;
 
-@Repository
 public interface CRUDCalendario extends CrudRepository<Calendario, Long> {
-    void asignarTarea(Long id, String tarea, int dia, int hora);
+    public List<Calendario> findByPersonaIdAndFechaAfterAndFechaBefore(Long id, Date a, Date b);
 }

@@ -1,7 +1,7 @@
 package com.usa.IngSoftware.services;
 
 import com.usa.IngSoftware.entities.Persona;
-import com.usa.IngSoftware.repository.CRUDPersona;
+import com.usa.IngSoftware.repository.PersonaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import java.util.Optional;
 public class PersonaService {
 
     @Autowired
-    private CRUDPersona personaDAO;
+    private PersonaRepository personaDAO;
 
     public Optional<Persona> findOne(Long ID) {
         return personaDAO.findById(ID);

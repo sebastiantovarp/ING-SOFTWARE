@@ -1,41 +1,28 @@
 package com.usa.IngSoftware.entities;
 
-//Pese a estar en enitites, esta NO  es una tabla. Hace parte de calendario.
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
+import lombok.Data;
+
+//Ultima tabla de calendario. Relaciona cada tarea a cada calendario. Relacion muchos a uno
+@Entity
+@Data
 public class Tarea {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
     private String descripcion;
-    private int nivelPrioridad;
-    private boolean completado;
+    private Integer prioridad;
+    private Boolean completado;
 
-    public Tarea(String descripcion, int nivelPrioridad) {
-        this.descripcion = descripcion;
-        this.nivelPrioridad = nivelPrioridad;
-        this.completado = false;
-    }
+    @ManyToOne
+    @JoinColumn(name = "calendario_id")
+    @JsonIgnoreProperties("tareas")
+    private Calendario calendario;
 
-    // Getters y Setters
-    public String getDescripcion() {
-        return descripcion;
-    }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public int getNivelPrioridad() {
-        return nivelPrioridad;
-    }
-
-    public void setNivelPrioridad(int nivelPrioridad) {
-        this.nivelPrioridad = nivelPrioridad;
-    }
-
-    public boolean isCompletado() {
-        return completado;
-    }
-
-    public void setCompletado(boolean completado) {
-        this.completado = completado;
-    }
 }
 
 

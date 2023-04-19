@@ -18,7 +18,7 @@ public class PersonaRepository {
         return personaDAO.findById(ID);
     }
 
-    public Optional<Persona> findByID(Long ID){
+    public Optional<Persona> findById(Long ID){
         return personaDAO.findById(ID);
     }
 
