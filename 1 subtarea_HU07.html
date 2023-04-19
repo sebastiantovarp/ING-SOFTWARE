@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Lista de contactos</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        text-align: center;
+        margin-top: 0;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      label {
+        margin-top: 10px;
+        font-weight: bold;
+      }
+      input[type="text"],
+      input[type="email"] {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: none;
+        margin-top: 5px;
+      }
+      input[type="submit"] {
+        background-color: #0066cc;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: none;
+        margin-top: 10px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #0052a3;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        max-width: 500px;
+        margin: 20px auto;
+      }
+      li {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .contact-details {
+        flex: 1;
+        margin-right: 10px;
+      }
+      .delete-button {
+        background-color: #cc0000;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+      }
+      .delete-button:hover {
+        background-color: #b30000;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Lista de contactos</h1>
+    
+    <form>
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="interests">Intereses:</label>
+      <input type="text" id="interests" name="interests" required>
+
+      <input type="submit" value="Agregar contacto">
+    </form>
+
+    <ul id="contact-list"></ul>
+
+    <script>
+      const form = document.querySelector('form');
+      const contactList = document.querySelector('#contact-list');
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const name = form.elements.name.value;
+        const email = form.elements.email.value;
+        const interests = form.elements.interests.value;
+
+        const contact = document.createElement('li');
+        contact.innerHTML = `
+          <div class="contact-details">
+            <div><strong>${name}</strong> (${email})</div>
+            <div>Intereses: ${interests}</div>
+          </div>
+          <button class="delete-button">Eliminar</button>
+        `;
+
+        contactList.appendChild(contact);
+
+        form
