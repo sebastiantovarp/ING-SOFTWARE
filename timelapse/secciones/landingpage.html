@@ -10,7 +10,8 @@
 
     <title>Landing Page</title>
     <link rel="stylesheet" type="text/css" href="C:\Users\santi\OneDrive - Universidad Sergio Arboleda\Documentos\Materias 6 semestre\Ingenieria de software\timelapse\secciones\estilos.css">
-</head>
+    <!--<script src="C:\Users\santi\OneDrive - Universidad Sergio Arboleda\Documentos\Materias 6 semestre\Ingenieria de software\timelapse\secciones\script.js"></script>.-->
+  </head>
 
 <body>
 
@@ -31,11 +32,17 @@
       <h6 class= 'bienvenida'>BIENVENIDOS</H6>
       <p class= 'descripcionBienvenida'> Sabemos que el tiempo es un recurso muy valioso y es por eso que estamos aquí para brindarles herramientas y recursos que les permitirán administrar su tiempo de manera más eficiente y obtener mejores resultados académicos, Nos comprometemos a ofrecerte el mejor servicio posible y a ayudarte a alcanzar tus objetivos académicos. ¡Gracias por elegirnos como tu aliado en el éxito académico!</p>
       
-      <button class="botonEmpezar">EMPEZAR</button>
+      <button class="botonEmpezar" id="botonEmpezar" >EMPEZAR</button>
     </div>
     
     <div class="seccion-derecha">
      
     </div>
+
+    <script> 
+      document.getElementById("botonEmpezar").addEventListener('click', function(){
+        window.location.href = 'seleccionActividades.html';
+      })
+    </script>
   </body>
 </html>
