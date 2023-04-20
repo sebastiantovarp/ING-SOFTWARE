@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Invitaciones a actividades</title>
+  <style>
+    body {
+      background-color: #222;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    label {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    input {
+      font-size: 1rem;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      border: none;
+    }
+    button {
+      font-size: 1.2rem;
+      padding: 0.5rem 1rem;
+      background-color: #7c5fff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #6c4fd5;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Invitaciones a actividades</h1>
+    <form>
+      <label for="hora">Hora:</label>
+      <input type="text" id="hora" name="hora" placeholder="Ej: 15:00">
+
+      <label for="actividad">Actividad:</label>
+      <input type="text" id="actividad" name="actividad" placeholder="Ej: Jugar fútbol">
+
+      <label for="hobbies">Hobbies afines:</label>
+      <input type="text" id="hobbies" name="hobbies" placeholder="Ej: Deportes, videojuegos">
+
+      <button type="submit">Enviar invitación</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const hora = document.querySelector('#hora').value;
+      const actividad = document.querySelector('#actividad').value;
+      const hobbies = document.querySelector('#hobbies').value;
+      const mensaje = `Hola amigos, los invito a participar en la actividad ${actividad} a las ${hora} horas. A mí también me gustan los ${hobbies}. ¿Quiénes se animan?`;
+      alert(mensaje);
+    });
+  </script>
+</body>
+</html>
