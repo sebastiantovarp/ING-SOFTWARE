@@ -1,0 +1,159 @@
+.seccion-superior {
+  background-color: #2b2d42;
+  padding: 20px;
+    position: relative;
+    border-color: black;
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+    height: 50px;
+
+}
+
+.seccion-izquierda {
+  background-color: #363537;
+  height: 100vh;
+  width: 50%;
+  float: left;
+  border-radius: 10px;
+}
+
+.bienvenida{
+    color: #eaeaea; 
+  text-align: center;
+  margin-top: 10%; /* Agregar margen superior */
+  padding: 10px; 
+  font-size: 20px; 
+  font-family: Arial, sans-serif;
+  opacity: 1;
+  
+    
+}
+.descripcionBienvenida{
+     color: #eaeaea; 
+  text-align: justify;
+  /*padding: 1%; */
+  font-size: 85%; 
+  font-family: Arial, sans-serif;
+  opacity: 0.7;
+    margin-left: 20%;
+  margin-right: 20%;
+  
+}
+
+.seccion-derecha {
+  background-color: #eee;
+  height: 100vh;
+  width: 50%;
+  float: right;
+  border-radius: 10px;
+  background-image: url("https://static.wixstatic.com/media/11062b_a6e1bb8d93704b859a65ba5d3dd3645a~mv2.jpg/v1/fill/w_676,h_668,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_a6e1bb8d93704b859a65ba5d3dd3645a~mv2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.boton1 {
+  position: absolute;
+  left: 85%;
+  top: 25%;
+  border-radius: 10px;
+  border-color: white;
+  background-color: transparent;
+  color: #fff;
+}
+.boton2 {
+  position: absolute;
+  left: 78%;
+  top: 25%;
+  border-radius: 10px;
+  border-color: white;
+  background-color: transparent;
+  color: #fff;
+}
+.boton3 {
+  position: absolute;
+  left: 70%;
+  top: 25%;
+  border-radius: 10px;
+  border-color: white;
+  background-color: transparent;
+  color: #fff;
+}
+.boton4 {
+  position: absolute;
+  left: 59%;
+  top: 25%;
+  border-radius: 10px;
+  border-color: white;
+  background-color: transparent;
+  color: #fff;
+}
+.boton5 {
+  position: absolute;
+  left: 50px;
+  top: 20px;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+}
+.botonEmpezar{
+    position: absolute;
+  left: 20%;
+  top: 90%;
+  border-radius: 10px;
+  background-color: #ff5252;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+}
+
+
+
+/* Estilos para las actividades */
+#activities {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #eeeeee;
+}
+
+.activity {
+  width: 300px;
+  padding: 20px;
+  margin: 20px;
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-radius: 30px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+p {
+  font-size: 16px;
+  color: #777;
+}
+
+.activity-checkbox {
+  margin-top: 10px;
+}
+
+.container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+    }

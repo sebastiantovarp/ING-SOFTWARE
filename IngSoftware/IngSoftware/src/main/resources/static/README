@@ -1,0 +1,5 @@
+Static contiene todos los elementos del Front.
+Configurar cualquier clase del paquete js cambiará el Frontend.
+
+Normalmente, se comunican index.html con myScript.js para funcionar.
+El funcionamiento interno de cada elemento del index, está estipulado en myScript.js

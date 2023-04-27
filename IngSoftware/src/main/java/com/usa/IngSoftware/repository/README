@@ -1,0 +1,2 @@
+Este repositorio tiene como finalidad gestionar las operaciones necesarias de la base de datos, es decir:
+Las clases de entities. (usa una interfaz de spring para ello)
