@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Reprogramar tarea</title>
+</head>
+<body>
+<h1>Reprogramar tarea</h1>
+<form method="post" th:action="@{/tarea/reprogramar}">
+    <input type="hidden" th:field="*{id}" />
+    <label for="fechaLimite">Nueva fecha límite:</label>
+    <input type="date" id="fechaLimite" name="fechaLimite" required="required" th:value="*{fechaLimite}" />
+    <br />
+    <button type="submit">Reprogramar tarea</button>
+</form>
+</body>
+</html>
