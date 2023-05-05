@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Progreso de tareas</title>
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+</head>
+<body>
+	<h1>Progreso de tareas</h1>
+
+	<div class="progress-container">
+        <h2 class = "titulo">Tu progreso</h2>
+        <div class="progress-info">
+          <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+          </div>
+          <div class="progress-data">
+            <p class="tasks-completed">Tareas completadas: <span id="tasks-completed">0</span></p>
+            <p class="percentage">Porcentaje completado: <span id="percentage">0%</span></p>
+          </div>
+        </div>
+      </div>
+      
+      <script>
+        // Obtenemos la cantidad total de tareas del usuario
+        const totalTasks = 10;
+      
+        // Obtenemos el número de tareas completadas del usuario (simulado para ejemplo)
+        const completedTasks = 7;
+      
+        // Calculamos el porcentaje de progreso
+        const progress = Math.floor((completedTasks / totalTasks) * 100);
+      
+        // Actualizamos el texto del porcentaje y la cantidad de tareas completadas
+        document.getElementById("percentage").innerHTML = `${progress}%`;
+        document.getElementById("tasks-completed").innerHTML = completedTasks;
+      
+        // Actualizamos el ancho de la barra de progreso
+        document.getElementById("progress").style.width = `${progress}%`;
+      </script>
+      
+</body>
+</html>

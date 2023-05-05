@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mi lista de tareas</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: #009688;
+        color: white;
+        padding: 10px;
+        text-align: center;
+      }
+      form {
+        margin: 20px auto;
+        width: 300px;
+        text-align: center;
+      }
+      label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 10px;
+      }
+      input[type="date"] {
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-bottom: 2px solid #009688;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      button[type="submit"] {
+        background-color: #009688;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      button[type="submit"]:hover {
+        background-color: #008080;
+      }
+      #tareas {
+        margin: 20px auto;
+        width: 300px;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      li {
+        padding: 10px;
+        background-color: #f0f0f0;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+      li:last-child {
+        margin-bottom: 0;
+      }
+      p {
+        margin: 0;
+      }
+      .mensaje {
+        margin: 20px auto;
+        width: 300px;
+        padding: 10px;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Mi lista de tareas</h1>
+    </header>
+    <form>
+      <label for="fecha">Selecciona una fecha:</label>
+      <input type="date" id="fecha" name="fecha" required>
+      <button type="submit">Buscar tareas pendientes</button>
+    </form>
+    <div id="tareas"></div>
+    <div id="mensaje"></div>
+    <script>
+      const form = document.querySelector("form");
+      const tareasDiv = document.getElementById("tareas");
+      const mensajeDiv = document.getElementById("mensaje");
+
+      form.addEventListener("submit", event => {
+        event.preventDefault();
+        const fecha = document.getElementById("fecha").value;
+        buscarTareas(fecha);
+      });
+
+      function buscarTareas(fecha) {
+        tareasDiv.innerHTML = "";
+        mensajeDiv.innerHTML = "";
+        fetch(`/tareas/${fecha}`)
+          .then(response => response.json())
+          .then(tareas => mostrarTareas(tareas))
+          .catch(error => mostrarMensaje("Ha ocurrido un error al obtener las tareas."));
+      }
+
+      function mostrarTareas(tareas) {
