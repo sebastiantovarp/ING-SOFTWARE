@@ -1,0 +1,26 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+const PORT = 3000;
+
+// Configurar middleware para analizar el cuerpo de la solicitud como JSON
+app.use(bodyParser.json());
+
+// Ruta para recibir las invitaciones a actividades
+app.post('/enviar-invitacion', (req, res) => {
+  const nombre = req.body.nombre;
+  const hora = req.body.hora;
+  const actividad = req.body.actividad;
+  const hobbies = req.body.hobbies;
+
+  // Aquí puedes agregar la lógica para procesar los datos recibidos
+  // Por ejemplo, guardar los datos en una base de datos o enviar un correo electrónico
+
+  // Ejemplo de respuesta de éxito
+  res.status(200).json({ message: 'Invitación enviada exitosamente' });
+});
+
+// Iniciar el servidor
+app.listen(PORT, () => {
+  console.log(`Servidor escuchando en el puerto ${PORT}`);
+});
