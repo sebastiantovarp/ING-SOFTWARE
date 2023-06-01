@@ -1,0 +1,24 @@
+const express = require('express');
+const app = express();
+const port = 3000;
+
+// Configurar middleware para procesar datos JSON
+app.use(express.json());
+
+// Definir ruta para servir el archivo HTML y los recursos estáticos (CSS, imágenes, etc.)
+app.use(express.static('public'));
+
+// Definir ruta para designar la hora de descanso
+app.post('/hora-descanso', (req, res) => {
+  const horaDescanso = req.body.horaDescanso;
+  // Aquí puedes realizar la lógica necesaria para guardar la hora de descanso en tu base de datos o realizar cualquier otra acción
+
+  // Devolver una respuesta de éxito
+  res.status(200).json({ message: 'Hora de descanso guardada exitosamente' });
+});
+
+// Iniciar el servidor
+app.listen(port, () => {
+  console.log(`Servidor en ejecución en http://localhost:${port}`);
+});
+
