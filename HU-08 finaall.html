@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Designar hora de descanso</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #ff7f7f; /* Cambio de color de fondo a rojo */
+		}
+		h1 {
+			text-align: center;
+			color: #fff; /* Cambio de color del título a blanco */
+			padding: 20px 0; /* Agrega espacio alrededor del título */
+		}
+		form {
+			background-color: #fff;
+			padding: 20px;
+			max-width: 500px;
+			margin: 0 auto;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.2);
+		}
+		label {
+			display: block;
+			font-weight: bold;
+			margin-bottom: 10px;
+			color: #333;
+		}
+		input[type="time"] {
+			padding: 5px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			width: 100%;
+			margin-bottom: 20px;
+			box-sizing: border-box;
+		}
+		input[type="submit"] {
+			background-color: #555;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		input[type="submit"]:hover {
+			background-color: #333;
+		}
+	</style>
+</head>
+<body>
+	<h1>Designar hora de descanso</h1>
+	<form>
+		 <label for="hora-descanso">Elige la hora de descanso:</label>
+		 <input type="time" id="hora-descanso" name="hora-descanso"><br><br>
+		 <input type="submit" value="Guardar">
+	</form>
+</body>
+</html>
